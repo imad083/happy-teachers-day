@@ -1,0 +1,245 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>A Letter of Appreciation for Mulia Phoenna</title>
+
+  <meta
+    name="description"
+    content="A personal Teachers' Day letter of appreciation for Mulia Phoenna."
+  >
+
+  <meta name="theme-color" content="#f7f0e5">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <div class="petals" id="petals" aria-hidden="true"></div>
+
+  <button
+    class="music"
+    id="music"
+    hidden
+    aria-pressed="false"
+  >
+    Play music
+  </button>
+
+  <main>
+
+    <!-- SCREEN 1: WELCOME -->
+    <section class="screen active" id="welcome">
+
+      <svg class="sprig" viewBox="0 0 120 40" aria-hidden="true">
+        <use href="#sprig"/>
+      </svg>
+
+      <h1>A Little Something for Someone Special</h1>
+
+      <p class="name">Mulia Phoenna</p>
+
+      <p class="sub">
+        A celebration of the kindness, patience, and dedication
+        behind every lesson.
+      </p>
+
+      <button class="btn" id="openBtn">
+        Open Your Letter
+      </button>
+
+    </section>
+
+
+    <!-- SCREEN 2: ENVELOPE -->
+    <section class="screen" id="envelope" aria-live="polite">
+
+      <div class="env" id="env">
+
+        <div class="env-back"></div>
+
+        <div class="env-letter">
+          <span>For Phoenna</span>
+        </div>
+
+        <div class="env-front"></div>
+
+        <div class="env-flap"></div>
+
+        <div class="seal" aria-hidden="true"></div>
+
+      </div>
+
+      <p class="hint">Opening…</p>
+
+    </section>
+
+
+    <!-- SCREEN 3: PERSONAL LETTER -->
+    <section class="screen" id="letter">
+
+      <article class="paper">
+
+        <p class="date">25 November 2026</p>
+
+        <h2>Dear Phoenna,</h2>
+
+        <p>
+          Today, on Teachers' Day, I wanted to take a moment
+          to appreciate you in a way that goes beyond
+          an ordinary greeting.
+        </p>
+
+        <p>
+          Teaching is mostly invisible work. The preparation
+          no one sees, the explanation given a third time
+          without a sigh, and the quiet decision to believe
+          in someone before they believe in themselves.
+          You do all of this with a patience that is rare,
+          and it shapes people long after the lesson is over.
+        </p>
+
+        <p>
+          I may not know every challenge that comes with
+          being a teacher, but I hope you never underestimate
+          the difference you make. The patience you give,
+          the knowledge you share, and the kindness you bring
+          into your work are all worth appreciating.
+          I hope you always find reasons to be proud of
+          what you do, even on the days when things feel difficult.
+        </p>
+
+        <p>
+          I hope this year gives you the rest you deserve,
+          students who surprise you, and the time to pursue
+          what you are curious about. I hope the effort you
+          give so freely comes back to you in ways you can feel.
+        </p>
+
+        <p>
+          Thank you for the care, the patience,
+          and the example you set.
+        </p>
+
+        <p class="sign">
+          With sincere appreciation,<br>
+          <em>Imaduddin Ali Muhammad</em>
+        </p>
+
+        <button class="btn ghost" id="nextBtn">
+          Continue
+        </button>
+
+      </article>
+
+    </section>
+
+
+    <!-- SCREEN 4: CLOSING -->
+    <section class="screen" id="closing">
+
+      <svg class="sprig big" viewBox="0 0 120 40" aria-hidden="true">
+        <use href="#sprig"/>
+      </svg>
+
+      <h2 class="close-title">
+        Happy Teachers' Day, Phoenna.
+      </h2>
+
+      <p class="sub">
+        May you always find as much happiness in teaching
+        as the inspiration you give to others.
+      </p>
+
+      <button class="btn ghost" id="againBtn">
+        Read again
+      </button>
+
+    </section>
+
+  </main>
+
+
+  <!-- DECORATIVE FLORAL SVG -->
+  <svg
+    width="0"
+    height="0"
+    style="position:absolute"
+    aria-hidden="true"
+  >
+
+    <symbol id="sprig" viewBox="0 0 120 40">
+
+      <path
+        d="M4 20 C30 18 60 22 116 20"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1"
+      />
+
+      <g fill="currentColor" opacity=".85">
+
+        <ellipse
+          cx="30" cy="13"
+          rx="9" ry="4"
+          transform="rotate(-25 30 13)"
+        />
+
+        <ellipse
+          cx="44" cy="27"
+          rx="9" ry="4"
+          transform="rotate(25 44 27)"
+        />
+
+        <ellipse
+          cx="78" cy="13"
+          rx="9" ry="4"
+          transform="rotate(-25 78 13)"
+        />
+
+        <ellipse
+          cx="92" cy="27"
+          rx="9" ry="4"
+          transform="rotate(25 92 27)"
+        />
+
+      </g>
+
+      <g
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1"
+      >
+
+        <circle cx="60" cy="20" r="5"/>
+
+        <circle
+          cx="60" cy="20"
+          r="2"
+          fill="currentColor"
+        />
+
+      </g>
+
+    </symbol>
+
+  </svg>
+
+
+  <!-- JAVASCRIPT -->
+  <script src="js/script.js"></script>
+
+</body>
+</html>

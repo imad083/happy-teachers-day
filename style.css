@@ -1,0 +1,57 @@
+:root{
+  --ivory:#f7f1e6; --paper:#fffaf0; --rose:#b07a78; --rose-dark:#8a5552;
+  --brown:#5b4038; --muted:#6f5d54; --line:#e4d6c3;
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:"Jost",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{background:var(--ivory);color:var(--brown);font-family:var(--sans);font-weight:300;line-height:1.6;overflow-x:hidden}
+main{position:relative;z-index:1;min-height:100%}
+.screen{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem 1.5rem;overflow-y:auto;opacity:0;transition:opacity .9s ease}
+.screen.active{display:flex}
+.screen.show{opacity:1}
+h1,h2{font-family:var(--serif);font-weight:500;margin:0}
+h1{font-size:clamp(2rem,7vw,3.4rem);line-height:1.12;max-width:15ch;margin-bottom:1.2rem}
+.name{font-family:var(--serif);font-style:italic;font-size:clamp(1.6rem,5vw,2.2rem);color:var(--rose-dark);margin:0 0 1rem}
+.sub{max-width:34ch;color:var(--muted);margin:0 0 2.2rem;font-size:1.02rem}
+.close-title{font-size:clamp(2rem,7vw,3rem);max-width:16ch;margin-bottom:1.2rem}
+.sprig{width:110px;color:var(--rose);margin-bottom:1.6rem}
+.sprig.big{width:150px;animation:sway 6s ease-in-out infinite}
+@keyframes sway{50%{transform:rotate(3deg) translateY(-4px)}}
+.btn{font:400 1rem var(--sans);letter-spacing:.04em;background:var(--rose-dark);color:#fff;border:1px solid var(--rose-dark);padding:.85rem 2rem;border-radius:999px;cursor:pointer;transition:background .3s,color .3s}
+.btn:hover{background:var(--brown);border-color:var(--brown);color:#fff}
+.btn.ghost{background:transparent;color:var(--rose-dark)}
+.btn.ghost:hover{background:var(--rose-dark);color:#fff}
+:focus-visible{outline:2px solid var(--brown);outline-offset:3px}
+
+.env{position:relative;width:min(300px,78vw);aspect-ratio:3/2;perspective:900px}
+.env>*{position:absolute}
+.env-back{inset:0;background:#e9d7c4;border-radius:4px}
+.env-letter{left:8%;right:8%;top:8%;height:80%;background:var(--paper);border-radius:3px;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-style:italic;font-size:1.3rem;color:var(--rose-dark);transition:transform 1.2s ease .8s;z-index:2;box-shadow:0 1px 6px rgba(91,64,56,.15)}
+.env-front{inset:0;z-index:3;background:#e2cdb8;border-radius:0 0 4px 4px;clip-path:polygon(0 100%,0 28%,50% 62%,100% 28%,100% 100%)}
+.env-flap{left:0;right:0;top:0;height:62%;background:#d6bda6;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .9s ease;z-index:4}
+.seal{left:50%;top:52%;width:34px;height:34px;margin:-17px 0 0 -17px;border-radius:50%;background:var(--rose-dark);z-index:5;transition:opacity .4s}
+.env.open .env-flap{transform:rotateX(180deg);z-index:1}
+.env.open .seal{opacity:0}
+.env.open .env-letter{transform:translateY(-70%) scale(1.04)}
+.hint{margin-top:2.5rem;color:var(--muted);letter-spacing:.06em}
+
+#letter{justify-content:flex-start}
+.paper{background:var(--paper);border:1px solid var(--line);width:min(620px,100%);margin:auto;padding:clamp(1.8rem,6vw,3.4rem);text-align:left;box-shadow:0 10px 40px rgba(91,64,56,.08)}
+.paper p{font-family:var(--serif);font-size:clamp(1.15rem,3.6vw,1.32rem);line-height:1.7;margin:0 0 1.1rem;max-width:62ch}
+.paper h2{font-size:2rem;margin-bottom:1.3rem;color:var(--rose-dark)}
+.paper .date{font-family:var(--sans);font-size:.85rem;color:var(--muted)}
+.paper .sign{margin-top:1.8rem}
+.paper .btn{margin-top:1rem}
+
+.petals{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.petal{position:absolute;top:-30px;width:12px;height:16px;background:var(--rose);opacity:.35;border-radius:80% 0 80% 0;animation:fall linear infinite}
+@keyframes fall{to{transform:translate(var(--dx),110vh) rotate(540deg)}}
+.music{position:fixed;top:1rem;right:1rem;z-index:5;font:300 .85rem var(--sans);background:var(--ivory);color:var(--brown);border:1px solid var(--line);border-radius:999px;padding:.45rem 1rem;cursor:pointer}
+.music[hidden]{display:none}
+.music[aria-pressed="true"]{border-color:var(--rose-dark);color:var(--rose-dark)}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition-duration:.01ms!important;transition-delay:0s!important}
+  .petals{display:none}
+}
